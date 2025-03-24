@@ -49,22 +49,12 @@ jobs:
       run: |
          $SPARK_HOME/bin/spark-submit data_processing.py
 
-
-    # Optionally, you can add steps to save the processed data
-    - name: Upload Processed Data Manually
-      run: zip -r processed_data.zip processed_people.csv
-
-    - name: Upload Processed Data Artifact
-      uses: actions/upload-artifact@v3
-      with:
-       name: processed_data
-       path: processed_data.zip
-
-
     - name: Check Processed File
       run: ls -lh processed_people.csv
 
     - name: Debug File Existence
       run: ls -lh
 
+    - name: Set JAVA_HOME
+      run: echo "JAVA_HOME=$SPARK_HOME" >> $GITHUB_ENV
 
