@@ -21,8 +21,8 @@ jobs:
     - name: Set up Java
       uses: actions/setup-java@v2
       with:
-        java-version: '11'
-        distribution: 'adoptopenjdk'
+        java-version: '21'
+        distribution: 'temurin'
     
     # Install Python dependencies
     - name: Set up Python
