@@ -22,3 +22,10 @@ jobs:
 
     - name: Verify Spark Installation
       run: spark-shell --version
+
+    - name: Install Python & PySpark
+      run: pip install pyspark
+
+    - name: Run Spark Processing
+      run: python spark_processing.py
+
