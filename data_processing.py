@@ -29,7 +29,7 @@ people_per_year = df_with_year.groupBy("year_of_birth").count().orderBy("year_of
 people_per_year.show()
 
 # Save the processed data to a new CSV file (if needed)
-df_with_year.write.csv("processed_people.csv", header=True)
+df_with_year.write.mode("overwrite").csv("processed_people.csv", header=True)
 
 # Stop the Spark session
 spark.stop()
