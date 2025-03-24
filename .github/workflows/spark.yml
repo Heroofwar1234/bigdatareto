@@ -54,5 +54,13 @@ jobs:
     - name: Upload Processed Data
       uses: actions/upload-artifact@v3
       with:
-        name: processed-data
+        name: processed_data
         path: processed_people.csv
+
+    - name: Check Processed File
+      run: ls -lh processed_people.csv
+
+    - name: Debug File Existence
+      run: ls -lh
+
+
