@@ -51,11 +51,15 @@ jobs:
 
 
     # Optionally, you can add steps to save the processed data
-    - name: Upload Processed Data
+    - name: Upload Processed Data Manually
+      run: zip -r processed_data.zip processed_people.csv
+
+    - name: Upload Processed Data Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: processed_data
-        path: processed_people.csv
+       name: processed_data
+       path: processed_data.zip
+
 
     - name: Check Processed File
       run: ls -lh processed_people.csv
