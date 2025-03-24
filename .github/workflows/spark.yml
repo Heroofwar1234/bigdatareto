@@ -15,16 +15,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
     
-    - name: Install Java
-      run: sudo apt-get install -y openjdk-11-jdk
+    - name: Set up Spark
+      uses: vemonet/setup-spark@v1
+      with:
+        spark-version: "3.5.3"
 
-    - name: Install Spark
-      run: |
-        wget https://dlcdn.apache.org/spark/spark-3.5.3/spark-3.5.3-bin-hadoop3.tgz
-        tar -xvzf spark-3.5.3-bin-hadoop3.tgz
-        mv spark-3.5.3-bin-hadoop3 /opt/spark
-        echo "export SPARK_HOME=/opt/spark" >> $GITHUB_ENV
-        echo "export PATH=$SPARK_HOME/bin:$PATH" >> $GITHUB_ENV
-    
     - name: Verify Spark Installation
       run: spark-shell --version
