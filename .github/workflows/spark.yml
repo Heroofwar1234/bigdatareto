@@ -44,10 +44,11 @@ jobs:
     - name: Verify Spark Installation
       run: spark-shell --version
     
-    # Run Spark data processing script
+ # Run Spark data processing script
     - name: Run Spark Data Processing
       run: |
-        python src/data_processing.py
+         $SPARK_HOME/bin/spark-submit data_processing.py
+
 
     # Optionally, you can add steps to save the processed data
   #  - name: Upload processed data
