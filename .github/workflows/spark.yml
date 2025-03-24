@@ -51,8 +51,8 @@ jobs:
 
 
     # Optionally, you can add steps to save the processed data
-    - name: Upload processed data
-      uses: actions/upload-artifact@v2
+    - name: Upload Processed Data
+      uses: actions/upload-artifact@v3
       with:
-        name: processed_data
-        path: data/processed_people.csv
+        name: processed-data
+        path: processed_people.csv
