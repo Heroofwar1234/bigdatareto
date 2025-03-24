@@ -50,8 +50,8 @@ jobs:
         python src/data_processing.py
 
     # Optionally, you can add steps to save the processed data
-    - name: Upload processed data
-      uses: actions/upload-artifact@v2
-      with:
-        name: processed_data
-        path: data/processed_people.csv
+  #  - name: Upload processed data
+  #    uses: actions/upload-artifact@v2
+  #    with:
+  #      name: processed_data
+  #      path: data/processed_people.csv
